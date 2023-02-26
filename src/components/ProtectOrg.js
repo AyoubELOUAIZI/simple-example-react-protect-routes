@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 
 export const ProtectOrg = () => {
-    let isorgLoged = localStorage.getItem('orgLoged');
-    let isadminLoged = localStorage.getItem('adminLoged');
+    // Read the userType cookie
+    // const userType = document.cookie.replace(/(?:(?:^|.*;\s*)userType\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    const userType = Cookies.get('userType');
 
-    // console.log(isAutentecated)
     return (
         <div>Organizer
-            {isorgLoged !== 'true' && isadminLoged !== 'true' ? <Navigate to='/login' /> : <Outlet />}
+            {userType !== 'org' && userType !== 'admin' ? <Navigate to='/login' /> : <Outlet />}
         </div>
-    )
-}
+    );
+};
