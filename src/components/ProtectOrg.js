@@ -1,11 +1,10 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import Cookies from 'js-cookie';
-
+import { useCookies } from 'react-cookie';
 
 export const ProtectOrg = () => {
-    // Read the userType cookie
-    const userType = Cookies.get('userType');
+    const [cookies] = useCookies(['userType']);
+    const userType = cookies.userType;
 
     return (
         <div>Organizer

@@ -1,14 +1,13 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import Cookies from 'js-cookie';
+import { useCookies } from 'react-cookie';
 
 export const ProtectAdmin = () => {
-    // Read the userType cookie
-    const userType = Cookies.get('userType');
+    const [cookies] = useCookies(['userType']);
 
     return (
         <div>Admin
-            {userType !== 'admin' ? <Navigate to='/login' /> : <Outlet />}
+            {cookies.userType !== 'admin' ? <Navigate to='/login' /> : <Outlet />}
         </div>
     );
 };
