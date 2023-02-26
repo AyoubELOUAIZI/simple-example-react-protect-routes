@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+
 
 export const Login = () => {
 
@@ -7,7 +9,7 @@ export const Login = () => {
 
   function handleLogin(type) {
     // Set a cookie with the user type
-    document.cookie = `userType=${type}; path=/`;
+    Cookies.set('userType', type, { path: '/' });
     navigate("/");
   }
 

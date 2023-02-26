@@ -4,7 +4,6 @@ import Cookies from 'js-cookie';
 
 export const ProtectUser = () => {
     // Read the userType cookie
-    // const userType = document.cookie.replace(/(?:(?:^|.*;\s*)userType\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     const userType = Cookies.get('userType');
 
     // Allow access for both users and admins

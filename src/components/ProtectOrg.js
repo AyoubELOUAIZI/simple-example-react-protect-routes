@@ -5,7 +5,6 @@ import Cookies from 'js-cookie';
 
 export const ProtectOrg = () => {
     // Read the userType cookie
-    // const userType = document.cookie.replace(/(?:(?:^|.*;\s*)userType\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     const userType = Cookies.get('userType');
 
     return (

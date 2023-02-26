@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+
+
 
 export const Logout = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log('heloooooo');
-    document.cookie = 'userType=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    navigate('/');
-  });
 
-  return (
-    <div>Logout</div>
-  );
+    useEffect(() => {
+        Cookies.remove('userType');
+        navigate('/');
+    });
+
+    return (
+        <div>Logout</div>
+    );
 };
