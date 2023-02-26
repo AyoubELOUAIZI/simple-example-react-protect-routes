@@ -1,0 +1,23 @@
+.navbar{
+    font-size: 15px;
+}
+.navbar ul{
+display :flex;
+flex-direction: row;
+list-style: none;
+background-color: rgb(137, 160, 7);
+padding: 20px;
+border-radius: 20px;
+
+}
+
+.navbar ul li a{
+ padding: 5px;
+ margin: 3px;
+text-decoration: none;
+background-color: rgb(164, 197, 131);
+
+}
+.navbar ul li a:hover {
+    background-color: rgb(130, 201, 58);
+}
