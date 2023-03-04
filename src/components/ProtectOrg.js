@@ -8,7 +8,8 @@ export const ProtectOrg = () => {
 
     return (
         <div>Organizer
-            {profile && profile.account && (profile.account.account_type === 'org' || profile.account.account_type === 'admin') ? <Outlet /> : <Navigate to='/login' />}
+          
+            {profile && profile.account && (profile.account.account_type === 'org' || profile.account.account_type === 'admin') ? <Outlet /> : <Navigate to='/login'  replace/>}
         </div>
     );
 };

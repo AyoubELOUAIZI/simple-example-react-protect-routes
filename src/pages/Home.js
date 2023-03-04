@@ -9,10 +9,10 @@ export const Home = () => {
      console.log(profile);
   }, [profile]);
 
-  if (!profile) {
-    return (<div>Loading...</div>
-    )
-  }
+  // if (!profile) {
+  //   return (<div>Loading...</div>
+  //   )
+  // }
 
   return (
     <div>

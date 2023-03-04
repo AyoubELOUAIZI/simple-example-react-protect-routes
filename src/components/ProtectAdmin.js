@@ -5,8 +5,8 @@ export const ProtectAdmin = () => {
     
     const { profile } = useContext(AuthContext);
     return (
-        <div>Admin
-            {profile && profile.account && profile.account.account_type === 'admin' ? <Outlet /> : <Navigate to='/login' />}
+        <div>Admin  
+            {profile && profile.account && profile.account.account_type === 'admin' ? <Outlet /> : <Navigate to='/login' replace />}
         </div>
 
     );

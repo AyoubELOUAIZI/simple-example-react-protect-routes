@@ -8,8 +8,7 @@ export const ProtectAuth = () => {
 
     return (
         <div>
-            {/* protect login and regester from the login users */}
-            {!profile  ? <Outlet /> : <Navigate to='/' />}
+            {!profile ? <Outlet /> : <Navigate to='/'  />}
         </div>
     );
 };
